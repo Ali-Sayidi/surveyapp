@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="card" dir="rtl">
+    <h5 class="card-header">پرسشنامه های در دسترس</h5>
+    <div class="card-body">
+        <p class="card-text">لطفا به پرسشنامه های زیر پاسخ دهید</p>
+        <ul>
+          {% for survey in surveys %}
+              <li>
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title"><a href="/survey_details/{{survey.pk}}">{{survey.name}}</a></h5>
+                    </div>
+                  </div>
+              </li>
+          {% endfor %}
+        </ul>
+    </div>
+  </div>
+
+{% endblock content %}
